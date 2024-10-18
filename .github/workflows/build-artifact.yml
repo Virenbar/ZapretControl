@@ -1,0 +1,78 @@
+name: Build Artifact
+on:
+  push:
+    branches: [ master ]
+    paths-ignore:
+      - "**.md"
+      - ".github/**"
+      - "assets/**"
+  pull_request:
+    branches: [ master ]
+  workflow_call:
+    outputs:
+      version: 
+        description: "Version builded"
+        value: ${{ jobs.build.outputs.version }}
+jobs:
+  build:
+    name: Build
+    strategy:
+      matrix:
+        include:
+          - framework: "net6.0-windows"
+            profile: "net6"
+          - framework: "net8.0-windows"
+            profile: "net8"
+    runs-on: windows-latest
+    env:
+      DOTNET_NOLOGO: true
+      FRAMEWORK: ${{ matrix.framework }}
+      PROFILE: ${{ matrix.profile }}
+    outputs:
+      version: ${{steps.version.outputs.version}}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        submodules: recursive
+
+    - name: Install .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 6.x
+      
+    - name: Set VERSION
+      id: version
+      run: .\.github\scripts\version.ps1
+
+    - name: Restore cache
+      uses: actions/cache@v4
+      with:
+        path: ~\.nuget\packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-nuget-
+
+    - name: Build solution
+      run: |
+        dotnet restore --locked-mode
+        dotnet build -c Release
+
+    - name: Build artifact
+      run: dotnet publish -c Release -p:PublishProfile=$env:PROFILE -f $env:FRAMEWORK /property:Version=$env:VERSION
+
+    - name: List files
+      run: ls ZapretControl\publish -R -file -Name
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ZapretControl(${{ matrix.framework }})
+        path: |
+          ZapretControl\publish\${{ matrix.framework }}\*.exe
+          ZapretControl\publish\${{ matrix.framework }}\*.dll
+          ZapretControl\publish\${{ matrix.framework }}\zapret-discord-youtube\**\*
+          ZapretControl\publish\${{ matrix.framework }}\ZapretControl.runtimeconfig.json
+          ZapretControl\publish\${{ matrix.framework }}\ZapretControl.exe.config
+        if-no-files-found: error

@@ -1,0 +1,3 @@
+[submodule "zapret-discord-youtube"]
+	path = zapret-discord-youtube
+	url = https://github.com/Flowseal/zapret-discord-youtube.git

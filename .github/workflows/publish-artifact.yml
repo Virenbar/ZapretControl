@@ -1,0 +1,35 @@
+name: Publish Artifact
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    name: Build
+    uses: ./.github/workflows/build-artifact.yml
+
+  release:
+    name: Publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    needs: build
+    steps:
+      - name: Version
+        run: echo "Version builded ${{ needs.build.outputs.version }}"
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+
+      - name: List files
+        run: ls -R
+
+      - name: Archive artifacts
+        run: |
+          zip -r "ZapretControl-6.0.zip" "ZapretControl(net6.0-windows)"
+          zip -r "ZapretControl-8.0.zip" "ZapretControl(net8.0-windows)"
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            ZapretControl-6.0.zip
+            ZapretControl-8.0.zip       
