@@ -28,7 +28,6 @@ namespace ZapretControl
                 .Where(S => !S.Contains("service"))
                 .Select(S => new FileInfo(S))
                 .ToList();
-            scripts.Clear();
             Settings.ZapretPath = Directory.EnumerateFiles(Constants.StartupPath, "winws.exe", SearchOption.AllDirectories).FirstOrDefault();
             Settings.ZapretDirectory = scripts.FirstOrDefault()?.DirectoryName;
             BS_ControlSettings.DataSource = Settings;
