@@ -117,26 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Settings" xml:space="preserve">
-    <value>Настройки</value>
+  <data name="About" xml:space="preserve">
+    <value>О приложении</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Запустить</value>
-  </data>
-  <data name="Restart" xml:space="preserve">
-    <value>Перезапустить</value>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Закрыть ZapretControl</value>
   </data>
-  <data name="Stop" xml:space="preserve">
-    <value>Остановить</value>
+  <data name="OK" xml:space="preserve">
+    <value>ОК</value>
   </data>
-  <data name="About" xml:space="preserve">
-    <value>О приложении</value>
+  <data name="Restart" xml:space="preserve">
+    <value>Перезапустить</value>
   </data>
   <data name="Scripts" xml:space="preserve">
     <value>Скрипты</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Настройки</value>
   </data>
   <data name="SettingsAutostart" xml:space="preserve">
     <value>Запускать Zapret при запуске ZapretControl</value>
@@ -149,5 +149,11 @@
   </data>
   <data name="Show" xml:space="preserve">
     <value>Показать ZapretControl</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Запустить</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Остановить</value>
   </data>
 </root>

@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -12,6 +13,11 @@ namespace ZapretControl
         [STAThread]
         private static void Main()
         {
+#if DEBUG
+            CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
+            CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("en-US");
+#endif
+
             using Mutex mutex = new(true, "ZapretControl", out var created);
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();

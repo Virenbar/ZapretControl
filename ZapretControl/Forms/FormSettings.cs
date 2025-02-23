@@ -18,9 +18,12 @@ namespace ZapretControl.Forms
             CB_Autostart.Checked = Settings.AutostartControl;
             CB_StopDriver.Checked = Settings.StopDriver;
 
+            Text = Strings.Settings;
             CB_Minimized.Text = Strings.SettingsMinimized;
             CB_Autostart.Text = Strings.SettingsAutostart;
             CB_StopDriver.Text = Strings.SettingsStop;
+            B_OK.Text = Strings.OK;
+            B_Cancel.Text = Strings.Cancel;
         }
 
         private void B_Cancel_Click(object sender, EventArgs e)
