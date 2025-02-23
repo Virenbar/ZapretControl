@@ -1,15 +1,15 @@
 # ZapretControl - GUI for [zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube)
 
-Небольшой GUI для запуска скриптов для Zapret
+A small GUI application to running scripts for Zapret
 
-Исполняемый файл и скрипты взяты напрямую из оригинального репозитория через git submodule.
+The executable and scripts are taken directly from the original repository via git submodule.
 
-## Скриншоты
+## Screenshots
 
-Основное окно  
-![modesets](./assets/main.png)
+Main window  
+![main](./assets/main.png)
 
-Меню в трее  
+Tray menu  
 ![tray](./assets/tray.png)
 
 ## Links
