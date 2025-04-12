@@ -88,6 +88,24 @@ namespace ZapretControl.Locales {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на winws.exe not found..
+        /// </summary>
+        internal static string NoBinary {
+            get {
+                return ResourceManager.GetString("NoBinary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Directory with scripts not found..
+        /// </summary>
+        internal static string NoScripts {
+            get {
+                return ResourceManager.GetString("NoScripts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на OK.
         /// </summary>
         internal static string OK {

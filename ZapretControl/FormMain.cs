@@ -25,7 +25,7 @@ namespace ZapretControl
             Localize();
 
             var scripts = Directory.EnumerateFiles(Constants.StartupPath, "*.bat", SearchOption.AllDirectories)
-                .Where(S => !(S.Contains("service") || S.Contains("check")))
+                .Where(S => !(S.Contains("service") || S.Contains("check") || S.Contains("switch")))
                 .Select(S => new FileInfo(S))
                 .ToList();
             Settings.ZapretPath = Directory.EnumerateFiles(Constants.StartupPath, "winws.exe", SearchOption.AllDirectories).FirstOrDefault();
@@ -91,12 +91,12 @@ namespace ZapretControl
         {
             if (string.IsNullOrEmpty(Settings.ZapretPath))
             {
-                this.ShowError("winws.exe не найден.");
+                this.ShowError(Strings.NoBinary);
                 return;
             }
             if (string.IsNullOrEmpty(Settings.ZapretDirectory))
             {
-                this.ShowError("Каталог со скриптами не найден.");
+                this.ShowError(Strings.NoScripts);
             }
         }
 

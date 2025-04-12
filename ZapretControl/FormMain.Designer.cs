@@ -217,7 +217,7 @@
             // 
             TLP_Scripts.AutoSize = true;
             TLP_Scripts.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            TLP_Scripts.ColumnCount = 4;
+            TLP_Scripts.ColumnCount = 3;
             TLP_Scripts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             TLP_Scripts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             TLP_Scripts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());

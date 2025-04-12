@@ -126,6 +126,12 @@
   <data name="Close" xml:space="preserve">
     <value>Закрыть ZapretControl</value>
   </data>
+  <data name="NoBinary" xml:space="preserve">
+    <value>winws.exe не найден.</value>
+  </data>
+  <data name="NoScripts" xml:space="preserve">
+    <value>Каталог со скриптами не найден.</value>
+  </data>
   <data name="OK" xml:space="preserve">
     <value>ОК</value>
   </data>
