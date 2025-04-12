@@ -28,7 +28,9 @@ namespace ZapretControl
             var zapret = new FileInfo(Settings.ZapretPath);
             var script = File.ReadAllText(Settings.ScriptPath);
             var arguments = Regex.Match(script, "--.*", RegexOptions.Singleline).Value;
-            arguments = arguments.Replace("%BIN%", $@"{zapret.DirectoryName}\");
+            //arguments = arguments.Replace("%BIN%", $@"{zapret.DirectoryName}\");
+            arguments = arguments.Replace("%BIN%", $@"bin\");
+            arguments = arguments.Replace("%LISTS%", $@"lists\");
 
             var StartInfo = new ProcessStartInfo
             {
