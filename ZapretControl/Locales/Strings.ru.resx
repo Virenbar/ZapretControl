@@ -147,6 +147,9 @@
   <data name="SettingsAutostart" xml:space="preserve">
     <value>Запускать Zapret при запуске ZapretControl</value>
   </data>
+  <data name="SettingsGameFilter" xml:space="preserve">
+    <value>Режим обхода для игр (1024-65535)</value>
+  </data>
   <data name="SettingsMinimized" xml:space="preserve">
     <value>Запускать свернутым</value>
   </data>

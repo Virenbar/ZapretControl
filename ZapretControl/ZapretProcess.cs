@@ -28,7 +28,7 @@ namespace ZapretControl
             var zapret = new FileInfo(Settings.ZapretPath);
             var script = File.ReadAllText(Settings.ScriptPath);
             var arguments = Regex.Match(script, "--.*", RegexOptions.Singleline).Value;
-            //arguments = arguments.Replace("%BIN%", $@"{zapret.DirectoryName}\");
+            arguments = arguments.Replace("%GameFilter%", Settings.GameFilter ? "1024-65535" : "0");
             arguments = arguments.Replace("%BIN%", $@"bin\");
             arguments = arguments.Replace("%LISTS%", $@"lists\");
 

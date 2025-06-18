@@ -151,6 +151,15 @@ namespace ZapretControl.Locales {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Bypass mode for games (1024-65535).
+        /// </summary>
+        internal static string SettingsGameFilter {
+            get {
+                return ResourceManager.GetString("SettingsGameFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Start minimized.
         /// </summary>
         internal static string SettingsMinimized {

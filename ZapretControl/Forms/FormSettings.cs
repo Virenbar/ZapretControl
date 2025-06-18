@@ -17,11 +17,13 @@ namespace ZapretControl.Forms
             CB_Minimized.Checked = Settings.LaunchMinimized;
             CB_Autostart.Checked = Settings.AutostartControl;
             CB_StopDriver.Checked = Settings.StopDriver;
+            CB_GameFilter.Checked = Settings.GameFilter;
 
             Text = Strings.Settings;
             CB_Minimized.Text = Strings.SettingsMinimized;
             CB_Autostart.Text = Strings.SettingsAutostart;
             CB_StopDriver.Text = Strings.SettingsStop;
+            CB_GameFilter.Text = Strings.SettingsGameFilter;
             B_OK.Text = Strings.OK;
             B_Cancel.Text = Strings.Cancel;
         }
@@ -36,6 +38,7 @@ namespace ZapretControl.Forms
             Settings.LaunchMinimized = CB_Minimized.Checked;
             Settings.AutostartControl = CB_Autostart.Checked;
             Settings.StopDriver = CB_StopDriver.Checked;
+            Settings.GameFilter = CB_GameFilter.Checked;
 
             Close();
         }

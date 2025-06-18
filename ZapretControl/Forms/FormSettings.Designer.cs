@@ -33,6 +33,7 @@
             CB_AutostartControl = new System.Windows.Forms.CheckBox();
             CB_Autostart = new System.Windows.Forms.CheckBox();
             CB_StopDriver = new System.Windows.Forms.CheckBox();
+            CB_GameFilter = new System.Windows.Forms.CheckBox();
             tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             B_OK = new System.Windows.Forms.Button();
@@ -59,11 +60,12 @@
             flowLayoutPanel3.Controls.Add(CB_Minimized);
             flowLayoutPanel3.Controls.Add(CB_Autostart);
             flowLayoutPanel3.Controls.Add(CB_StopDriver);
+            flowLayoutPanel3.Controls.Add(CB_GameFilter);
             flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new System.Drawing.Size(284, 100);
+            flowLayoutPanel3.Size = new System.Drawing.Size(284, 125);
             flowLayoutPanel3.TabIndex = 8;
             flowLayoutPanel3.WrapContents = false;
             // 
@@ -95,6 +97,15 @@
             CB_StopDriver.Size = new System.Drawing.Size(92, 19);
             CB_StopDriver.TabIndex = 7;
             CB_StopDriver.Text = "SettingsStop";
+            // 
+            // CB_GameFilter
+            // 
+            CB_GameFilter.AutoSize = true;
+            CB_GameFilter.Location = new System.Drawing.Point(3, 103);
+            CB_GameFilter.Name = "CB_GameFilter";
+            CB_GameFilter.Size = new System.Drawing.Size(83, 19);
+            CB_GameFilter.TabIndex = 7;
+            CB_GameFilter.Text = "GameFilter";
             // 
             // tableLayoutPanel1
             // 
@@ -166,8 +177,8 @@
             ControlBox = false;
             Controls.Add(tableLayoutPanel1);
             Controls.Add(flowLayoutPanel3);
-            MaximumSize = new System.Drawing.Size(400, 200);
-            MinimumSize = new System.Drawing.Size(300, 180);
+            MaximumSize = new System.Drawing.Size(300, 250);
+            MinimumSize = new System.Drawing.Size(300, 200);
             Name = "FormSettings";
             ShowInTaskbar = false;
             StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -193,5 +204,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button B_OK;
         private System.Windows.Forms.Button B_Cancel;
+        private System.Windows.Forms.CheckBox CB_GameFilter;
     }
 }
