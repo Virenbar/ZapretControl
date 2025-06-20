@@ -26,6 +26,7 @@ namespace ZapretControl
 
             var scripts = Directory.EnumerateFiles(Constants.StartupPath, "*.bat", SearchOption.AllDirectories)
                 .Where(S => !(S.Contains("service") || S.Contains("check") || S.Contains("switch")))
+                .OrderBy(S => S.Length).ThenBy(S => S)
                 .Select(S => new FileInfo(S))
                 .ToList();
             Settings.ZapretPath = Directory.EnumerateFiles(Constants.StartupPath, "winws.exe", SearchOption.AllDirectories).FirstOrDefault();
