@@ -135,11 +135,17 @@
   <data name="OK" xml:space="preserve">
     <value>ОК</value>
   </data>
+  <data name="OpenList" xml:space="preserve">
+    <value>Открыть list-general</value>
+  </data>
   <data name="Restart" xml:space="preserve">
     <value>Перезапустить</value>
   </data>
   <data name="Scripts" xml:space="preserve">
     <value>Скрипты</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>Сервис</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Настройки</value>
@@ -164,5 +170,8 @@
   </data>
   <data name="Stop" xml:space="preserve">
     <value>Остановить</value>
+  </data>
+  <data name="SwitchIPSet" xml:space="preserve">
+    <value>Переключить IP-set</value>
   </data>
 </root>

@@ -38,6 +38,9 @@
             FormMenu = new System.Windows.Forms.MenuStrip();
             MI_Settings = new System.Windows.Forms.ToolStripMenuItem();
             MI_About = new System.Windows.Forms.ToolStripMenuItem();
+            MI_Service = new System.Windows.Forms.ToolStripMenuItem();
+            MI_OpenList = new System.Windows.Forms.ToolStripMenuItem();
+            MI_SwitchIP = new System.Windows.Forms.ToolStripMenuItem();
             tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             B_Restart = new System.Windows.Forms.Button();
             B_Close = new System.Windows.Forms.Button();
@@ -104,11 +107,11 @@
             // 
             // FormMenu
             // 
-            FormMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { MI_Settings, MI_About });
+            FormMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { MI_Settings, MI_About, MI_Service });
             FormMenu.Location = new System.Drawing.Point(0, 0);
             FormMenu.Name = "FormMenu";
             FormMenu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            FormMenu.Size = new System.Drawing.Size(544, 24);
+            FormMenu.Size = new System.Drawing.Size(564, 24);
             FormMenu.TabIndex = 1;
             FormMenu.Text = "menuStrip1";
             // 
@@ -129,6 +132,29 @@
             MI_About.Text = "About";
             MI_About.Click += MI_About_Click;
             // 
+            // MI_Service
+            // 
+            MI_Service.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { MI_OpenList, MI_SwitchIP });
+            MI_Service.Name = "MI_Service";
+            MI_Service.Size = new System.Drawing.Size(56, 20);
+            MI_Service.Text = "Service";
+            // 
+            // MI_OpenList
+            // 
+            MI_OpenList.Image = icons8.Document16;
+            MI_OpenList.Name = "MI_OpenList";
+            MI_OpenList.Size = new System.Drawing.Size(180, 22);
+            MI_OpenList.Text = "OpenList";
+            MI_OpenList.Click += MI_OpenList_Click;
+            // 
+            // MI_SwitchIP
+            // 
+            MI_SwitchIP.Image = icons8.Switch16;
+            MI_SwitchIP.Name = "MI_SwitchIP";
+            MI_SwitchIP.Size = new System.Drawing.Size(180, 22);
+            MI_SwitchIP.Text = "SwitchIPSet";
+            MI_SwitchIP.Click += MI_SwitchIP_Click;
+            // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.AutoSize = true;
@@ -145,7 +171,7 @@
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new System.Drawing.Size(544, 33);
+            tableLayoutPanel1.Size = new System.Drawing.Size(564, 33);
             tableLayoutPanel1.TabIndex = 2;
             // 
             // B_Restart
@@ -170,7 +196,7 @@
             B_Close.AutoSize = true;
             B_Close.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             B_Close.Image = icons8.Shutdown16;
-            B_Close.Location = new System.Drawing.Point(400, 3);
+            B_Close.Location = new System.Drawing.Point(420, 3);
             B_Close.Name = "B_Close";
             B_Close.Padding = new System.Windows.Forms.Padding(1);
             B_Close.Size = new System.Drawing.Size(141, 27);
@@ -186,7 +212,7 @@
             B_Start.AutoSize = true;
             B_Start.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             B_Start.Image = Properties.Resources.winws_green;
-            B_Start.Location = new System.Drawing.Point(224, 3);
+            B_Start.Location = new System.Drawing.Point(234, 3);
             B_Start.Name = "B_Start";
             B_Start.Padding = new System.Windows.Forms.Padding(1);
             B_Start.Size = new System.Drawing.Size(96, 27);
@@ -208,7 +234,7 @@
             GB_Scripts.Dock = System.Windows.Forms.DockStyle.Top;
             GB_Scripts.Location = new System.Drawing.Point(3, 3);
             GB_Scripts.Name = "GB_Scripts";
-            GB_Scripts.Size = new System.Drawing.Size(538, 47);
+            GB_Scripts.Size = new System.Drawing.Size(558, 47);
             GB_Scripts.TabIndex = 6;
             GB_Scripts.TabStop = false;
             GB_Scripts.Text = "Scripts";
@@ -229,7 +255,7 @@
             TLP_Scripts.Name = "TLP_Scripts";
             TLP_Scripts.RowCount = 1;
             TLP_Scripts.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            TLP_Scripts.Size = new System.Drawing.Size(532, 25);
+            TLP_Scripts.Size = new System.Drawing.Size(552, 25);
             TLP_Scripts.TabIndex = 8;
             // 
             // radioButton1
@@ -267,7 +293,7 @@
             tableLayoutPanel2.RowCount = 2;
             tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tableLayoutPanel2.Size = new System.Drawing.Size(544, 53);
+            tableLayoutPanel2.Size = new System.Drawing.Size(564, 53);
             tableLayoutPanel2.TabIndex = 7;
             // 
             // FormMain
@@ -275,7 +301,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(250, 250, 250);
-            ClientSize = new System.Drawing.Size(544, 211);
+            ClientSize = new System.Drawing.Size(564, 211);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(FormMenu);
@@ -284,7 +310,7 @@
             MaximizeBox = false;
             MaximumSize = new System.Drawing.Size(800, 600);
             MinimizeBox = false;
-            MinimumSize = new System.Drawing.Size(560, 250);
+            MinimumSize = new System.Drawing.Size(580, 250);
             Name = "FormMain";
             Text = "ZapretControl";
             FormClosing += FormMain_FormClosing;
@@ -326,5 +352,8 @@
         private System.Windows.Forms.TableLayoutPanel TLP_Scripts;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.ToolStripMenuItem MI_Service;
+        private System.Windows.Forms.ToolStripMenuItem MI_OpenList;
+        private System.Windows.Forms.ToolStripMenuItem MI_SwitchIP;
     }
 }

@@ -83,6 +83,16 @@ namespace ZapretControl {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Document16 {
+            get {
+                object obj = ResourceManager.GetObject("Document16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Info16 {
             get {
                 object obj = ResourceManager.GetObject("Info16", resourceCulture);
@@ -126,6 +136,16 @@ namespace ZapretControl {
         internal static System.Drawing.Bitmap Shutdown16 {
             get {
                 object obj = ResourceManager.GetObject("Shutdown16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Switch16 {
+            get {
+                object obj = ResourceManager.GetObject("Switch16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -115,6 +115,15 @@ namespace ZapretControl.Locales {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Open list-general.
+        /// </summary>
+        internal static string OpenList {
+            get {
+                return ResourceManager.GetString("OpenList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Restars Zapret.
         /// </summary>
         internal static string Restart {
@@ -129,6 +138,15 @@ namespace ZapretControl.Locales {
         internal static string Scripts {
             get {
                 return ResourceManager.GetString("Scripts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Service.
+        /// </summary>
+        internal static string Service {
+            get {
+                return ResourceManager.GetString("Service", resourceCulture);
             }
         }
         
@@ -201,6 +219,15 @@ namespace ZapretControl.Locales {
         internal static string Stop {
             get {
                 return ResourceManager.GetString("Stop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Switch IP-set.
+        /// </summary>
+        internal static string SwitchIPSet {
+            get {
+                return ResourceManager.GetString("SwitchIPSet", resourceCulture);
             }
         }
     }

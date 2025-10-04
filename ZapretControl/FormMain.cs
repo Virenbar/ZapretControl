@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -114,6 +115,10 @@ namespace ZapretControl
             MI_Stop.Text = Strings.Stop;
             MI_Show.Text = Strings.Show;
             MI_Close.Text = Strings.Close;
+
+            MI_Service.Text = Strings.Service;
+            MI_OpenList.Text = Strings.OpenList;
+            MI_SwitchIP.Text = Strings.SwitchIPSet;
         }
 
         private void RefreshPath()
@@ -205,6 +210,25 @@ namespace ZapretControl
             using var F = new FormSettings();
             F.ShowDialog(this);
         }
+
+        #region Service
+
+        private void MI_OpenList_Click(object sender, EventArgs e)
+        {
+            var List = Directory.EnumerateFiles(Constants.StartupPath, "list-general.txt", SearchOption.AllDirectories).FirstOrDefault();
+            if (List is null) return;
+
+            Process.Start(new ProcessStartInfo(List) { UseShellExecute = true });
+        }
+
+        private async void MI_SwitchIP_Click(object sender, EventArgs e)
+        {
+            MI_SwitchIP.Enabled = false;
+            await ServiceProcess.Switch();
+            MI_SwitchIP.Enabled = true;
+        }
+
+        #endregion Service
 
         #region Tray
 
