@@ -34,8 +34,8 @@ namespace ZapretControl
             Settings.ZapretDirectory = scripts.FirstOrDefault()?.DirectoryName;
             BS_ControlSettings.DataSource = Settings;
 
-            TLP_Scripts.SuspendLayout();
-            TLP_Scripts.Controls.Clear();
+            FLP_Scripts.SuspendLayout();
+            FLP_Scripts.Controls.Clear();
             foreach (var script in scripts)
             {
                 var Script = new Script
@@ -50,9 +50,9 @@ namespace ZapretControl
                     AutoSize = true
                 };
                 RBSripts.Add((RB, Script));
-                TLP_Scripts.Controls.Add(RB);
+                FLP_Scripts.Controls.Add(RB);
             }
-            TLP_Scripts.ResumeLayout();
+            FLP_Scripts.ResumeLayout();
 
             RefreshUI();
             StopZapret();

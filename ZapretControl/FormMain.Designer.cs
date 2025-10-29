@@ -47,7 +47,7 @@
             B_Start = new System.Windows.Forms.Button();
             BS_ControlSettings = new System.Windows.Forms.BindingSource(components);
             GB_Scripts = new System.Windows.Forms.GroupBox();
-            TLP_Scripts = new System.Windows.Forms.TableLayoutPanel();
+            FLP_Scripts = new System.Windows.Forms.FlowLayoutPanel();
             radioButton1 = new System.Windows.Forms.RadioButton();
             radioButton2 = new System.Windows.Forms.RadioButton();
             tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -56,7 +56,7 @@
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BS_ControlSettings).BeginInit();
             GB_Scripts.SuspendLayout();
-            TLP_Scripts.SuspendLayout();
+            FLP_Scripts.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -111,7 +111,7 @@
             FormMenu.Location = new System.Drawing.Point(0, 0);
             FormMenu.Name = "FormMenu";
             FormMenu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            FormMenu.Size = new System.Drawing.Size(564, 24);
+            FormMenu.Size = new System.Drawing.Size(484, 24);
             FormMenu.TabIndex = 1;
             FormMenu.Text = "menuStrip1";
             // 
@@ -143,7 +143,7 @@
             // 
             MI_OpenList.Image = icons8.Document16;
             MI_OpenList.Name = "MI_OpenList";
-            MI_OpenList.Size = new System.Drawing.Size(180, 22);
+            MI_OpenList.Size = new System.Drawing.Size(135, 22);
             MI_OpenList.Text = "OpenList";
             MI_OpenList.Click += MI_OpenList_Click;
             // 
@@ -151,7 +151,7 @@
             // 
             MI_SwitchIP.Image = icons8.Switch16;
             MI_SwitchIP.Name = "MI_SwitchIP";
-            MI_SwitchIP.Size = new System.Drawing.Size(180, 22);
+            MI_SwitchIP.Size = new System.Drawing.Size(135, 22);
             MI_SwitchIP.Text = "SwitchIPSet";
             MI_SwitchIP.Click += MI_SwitchIP_Click;
             // 
@@ -167,11 +167,11 @@
             tableLayoutPanel1.Controls.Add(B_Close, 2, 0);
             tableLayoutPanel1.Controls.Add(B_Start, 1, 0);
             tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            tableLayoutPanel1.Location = new System.Drawing.Point(0, 178);
+            tableLayoutPanel1.Location = new System.Drawing.Point(0, 228);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new System.Drawing.Size(564, 33);
+            tableLayoutPanel1.Size = new System.Drawing.Size(484, 33);
             tableLayoutPanel1.TabIndex = 2;
             // 
             // B_Restart
@@ -196,7 +196,7 @@
             B_Close.AutoSize = true;
             B_Close.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             B_Close.Image = icons8.Shutdown16;
-            B_Close.Location = new System.Drawing.Point(420, 3);
+            B_Close.Location = new System.Drawing.Point(340, 3);
             B_Close.Name = "B_Close";
             B_Close.Padding = new System.Windows.Forms.Padding(1);
             B_Close.Size = new System.Drawing.Size(141, 27);
@@ -212,7 +212,7 @@
             B_Start.AutoSize = true;
             B_Start.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             B_Start.Image = Properties.Resources.winws_green;
-            B_Start.Location = new System.Drawing.Point(234, 3);
+            B_Start.Location = new System.Drawing.Point(194, 3);
             B_Start.Name = "B_Start";
             B_Start.Padding = new System.Windows.Forms.Padding(1);
             B_Start.Size = new System.Drawing.Size(96, 27);
@@ -230,33 +230,25 @@
             // 
             GB_Scripts.AutoSize = true;
             GB_Scripts.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            GB_Scripts.Controls.Add(TLP_Scripts);
-            GB_Scripts.Dock = System.Windows.Forms.DockStyle.Top;
+            GB_Scripts.Controls.Add(FLP_Scripts);
+            GB_Scripts.Dock = System.Windows.Forms.DockStyle.Fill;
             GB_Scripts.Location = new System.Drawing.Point(3, 3);
             GB_Scripts.Name = "GB_Scripts";
-            GB_Scripts.Size = new System.Drawing.Size(558, 47);
+            GB_Scripts.Size = new System.Drawing.Size(478, 178);
             GB_Scripts.TabIndex = 6;
             GB_Scripts.TabStop = false;
             GB_Scripts.Text = "Scripts";
             // 
-            // TLP_Scripts
+            // FLP_Scripts
             // 
-            TLP_Scripts.AutoSize = true;
-            TLP_Scripts.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            TLP_Scripts.ColumnCount = 3;
-            TLP_Scripts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            TLP_Scripts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            TLP_Scripts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            TLP_Scripts.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            TLP_Scripts.Controls.Add(radioButton1, 0, 0);
-            TLP_Scripts.Controls.Add(radioButton2, 1, 0);
-            TLP_Scripts.Dock = System.Windows.Forms.DockStyle.Fill;
-            TLP_Scripts.Location = new System.Drawing.Point(3, 19);
-            TLP_Scripts.Name = "TLP_Scripts";
-            TLP_Scripts.RowCount = 1;
-            TLP_Scripts.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            TLP_Scripts.Size = new System.Drawing.Size(552, 25);
-            TLP_Scripts.TabIndex = 8;
+            FLP_Scripts.Controls.Add(radioButton1);
+            FLP_Scripts.Controls.Add(radioButton2);
+            FLP_Scripts.Dock = System.Windows.Forms.DockStyle.Fill;
+            FLP_Scripts.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            FLP_Scripts.Location = new System.Drawing.Point(3, 19);
+            FLP_Scripts.Name = "FLP_Scripts";
+            FLP_Scripts.Size = new System.Drawing.Size(472, 156);
+            FLP_Scripts.TabIndex = 8;
             // 
             // radioButton1
             // 
@@ -264,7 +256,7 @@
             radioButton1.Location = new System.Drawing.Point(3, 3);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new System.Drawing.Size(87, 19);
-            radioButton1.TabIndex = 1;
+            radioButton1.TabIndex = 11;
             radioButton1.TabStop = true;
             radioButton1.Text = "Placeholder";
             radioButton1.UseVisualStyleBackColor = true;
@@ -272,28 +264,27 @@
             // radioButton2
             // 
             radioButton2.AutoSize = true;
-            radioButton2.Location = new System.Drawing.Point(96, 3);
+            radioButton2.Location = new System.Drawing.Point(3, 28);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new System.Drawing.Size(87, 19);
-            radioButton2.TabIndex = 1;
+            radioButton2.TabIndex = 12;
             radioButton2.TabStop = true;
             radioButton2.Text = "Placeholder";
             radioButton2.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
             // 
-            tableLayoutPanel2.AutoSize = true;
             tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             tableLayoutPanel2.ColumnCount = 1;
             tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             tableLayoutPanel2.Controls.Add(GB_Scripts, 0, 0);
-            tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             tableLayoutPanel2.Location = new System.Drawing.Point(0, 24);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 2;
-            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            tableLayoutPanel2.Size = new System.Drawing.Size(564, 53);
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            tableLayoutPanel2.Size = new System.Drawing.Size(484, 204);
             tableLayoutPanel2.TabIndex = 7;
             // 
             // FormMain
@@ -301,7 +292,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(250, 250, 250);
-            ClientSize = new System.Drawing.Size(564, 211);
+            ClientSize = new System.Drawing.Size(484, 261);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(FormMenu);
@@ -310,7 +301,7 @@
             MaximizeBox = false;
             MaximumSize = new System.Drawing.Size(800, 600);
             MinimizeBox = false;
-            MinimumSize = new System.Drawing.Size(580, 250);
+            MinimumSize = new System.Drawing.Size(500, 300);
             Name = "FormMain";
             Text = "ZapretControl";
             FormClosing += FormMain_FormClosing;
@@ -322,9 +313,8 @@
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)BS_ControlSettings).EndInit();
             GB_Scripts.ResumeLayout(false);
-            GB_Scripts.PerformLayout();
-            TLP_Scripts.ResumeLayout(false);
-            TLP_Scripts.PerformLayout();
+            FLP_Scripts.ResumeLayout(false);
+            FLP_Scripts.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             ResumeLayout(false);
@@ -349,11 +339,11 @@
         private System.Windows.Forms.GroupBox GB_Scripts;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.ToolStripMenuItem MI_Settings;
-        private System.Windows.Forms.TableLayoutPanel TLP_Scripts;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.ToolStripMenuItem MI_Service;
         private System.Windows.Forms.ToolStripMenuItem MI_OpenList;
         private System.Windows.Forms.ToolStripMenuItem MI_SwitchIP;
+        private System.Windows.Forms.FlowLayoutPanel FLP_Scripts;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }
