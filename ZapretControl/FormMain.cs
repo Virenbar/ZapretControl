@@ -55,6 +55,8 @@ namespace ZapretControl
             FLP_Scripts.ResumeLayout();
 
             RefreshUI();
+            _ = RefreshMode();
+
             StopZapret();
             if (string.IsNullOrEmpty(Settings.ZapretPath) || string.IsNullOrEmpty(Settings.ZapretDirectory))
             {
@@ -132,6 +134,17 @@ namespace ZapretControl
         private void RefreshUI()
         {
             B_Restart.Enabled = ZapretProcess.IsRunning;
+        }
+
+        private async Task RefreshMode()
+        {
+            // Try get current IPSet mode
+            try
+            {
+                var mode = await ServiceProcess.GetCurrentIPSetMode();
+                MI_SwitchIP.Text = $"{Strings.SwitchIPSet} ({mode})";
+            }
+            catch (Exception) {/* Ignore */}
         }
 
         private void ShowControl()
@@ -233,7 +246,8 @@ namespace ZapretControl
         private async void MI_SwitchIP_Click(object sender, EventArgs e)
         {
             MI_SwitchIP.Enabled = false;
-            await ServiceProcess.Switch();
+            await ServiceProcess.SwitchIPSet();
+            await RefreshMode();
             MI_SwitchIP.Enabled = true;
         }
 
