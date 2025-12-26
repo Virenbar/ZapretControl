@@ -124,6 +124,15 @@ namespace ZapretControl.Locales {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Open lists folder.
+        /// </summary>
+        internal static string OpenListsFolder {
+            get {
+                return ResourceManager.GetString("OpenListsFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Restars Zapret.
         /// </summary>
         internal static string Restart {

@@ -138,6 +138,9 @@
   <data name="OpenList" xml:space="preserve">
     <value>Open list-general</value>
   </data>
+  <data name="OpenListsFolder" xml:space="preserve">
+    <value>Open lists folder</value>
+  </data>
   <data name="Restart" xml:space="preserve">
     <value>Restars Zapret</value>
   </data>

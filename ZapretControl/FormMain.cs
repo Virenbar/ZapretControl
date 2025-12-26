@@ -119,6 +119,7 @@ namespace ZapretControl
             MI_Service.Text = Strings.Service;
             MI_OpenList.Text = Strings.OpenList;
             MI_SwitchIP.Text = Strings.SwitchIPSet;
+            MI_OpenListFolder.Text = Strings.OpenListsFolder;
         }
 
         private void RefreshPath()
@@ -219,6 +220,14 @@ namespace ZapretControl
             if (List is null) return;
 
             Process.Start(new ProcessStartInfo(List) { UseShellExecute = true });
+        }
+
+        private void MI_OpenListFolder_Click(object sender, EventArgs e)
+        {
+            var Lists = Directory.EnumerateDirectories(Constants.StartupPath, "lists", SearchOption.AllDirectories).FirstOrDefault();
+            if (Lists is null) return;
+
+            Process.Start(new ProcessStartInfo(Lists) { UseShellExecute = true });
         }
 
         private async void MI_SwitchIP_Click(object sender, EventArgs e)

@@ -138,6 +138,9 @@
   <data name="OpenList" xml:space="preserve">
     <value>Открыть list-general</value>
   </data>
+  <data name="OpenListsFolder" xml:space="preserve">
+    <value>Открыть папку lists</value>
+  </data>
   <data name="Restart" xml:space="preserve">
     <value>Перезапустить</value>
   </data>
