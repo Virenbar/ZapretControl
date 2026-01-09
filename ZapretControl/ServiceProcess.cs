@@ -10,10 +10,12 @@ namespace ZapretControl
 {
     internal static class ServiceProcess
     {
-        public static List<string> Buffer = new();
-        private static readonly Regex IPSetRegex = new(@"ipset \((?<mode>\w+)\)", RegexOptions.Compiled);
+        private const string IPSetMenu = "5";
+        private static readonly List<string> Buffer = new();
+        private static readonly Regex IPSetRegex = new(@"ipset.*\[(?<mode>\w+)\]", RegexOptions.Compiled | RegexOptions.IgnoreCase);
         private static readonly ControlSettings Settings = Config.Current;
         private static Process Service;
+
         public static bool IsRunning => Service != null;
 
         public static Task<string> GetCurrentIPSetMode()
@@ -33,7 +35,7 @@ namespace ZapretControl
             {
                 StartService();
                 Thread.Sleep(1000);
-                Service.StandardInput.WriteLine("8");
+                Service.StandardInput.WriteLine(IPSetMenu);
                 Thread.Sleep(1000);
                 //Service.StandardInput.WriteLine("0");
                 StopService();
