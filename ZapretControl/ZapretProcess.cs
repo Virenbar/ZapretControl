@@ -24,11 +24,12 @@ namespace ZapretControl
         public static void Start()
         {
             if (IsRunning) { return; }
-
             var zapret = new FileInfo(Settings.ZapretPath);
             var script = File.ReadAllText(Settings.ScriptPath);
             var arguments = Regex.Match(script, "--.*", RegexOptions.Singleline).Value;
-            arguments = arguments.Replace("%GameFilter%", Settings.GameFilter ? "1024-65535" : "0");
+            var game = Settings.GameFilterMode;
+            arguments = arguments.Replace("%GameFilterUDP%", game.UDP ? game.UDPRange : "12");
+            arguments = arguments.Replace("%GameFilterTCP%", game.TCP ? game.TCPRange : "12");
             arguments = arguments.Replace("%BIN%", $@"bin\");
             arguments = arguments.Replace("%LISTS%", $@"lists\");
 

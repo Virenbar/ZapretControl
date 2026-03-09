@@ -88,6 +88,15 @@ namespace ZapretControl.Locales {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Lists.
+        /// </summary>
+        internal static string Lists {
+            get {
+                return ResourceManager.GetString("Lists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на winws.exe not found..
         /// </summary>
         internal static string NoBinary {
@@ -120,6 +129,24 @@ namespace ZapretControl.Locales {
         internal static string OpenList {
             get {
                 return ResourceManager.GetString("OpenList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Open list-exclude-user.
+        /// </summary>
+        internal static string OpenListExclude {
+            get {
+                return ResourceManager.GetString("OpenListExclude", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Open list-general-user.
+        /// </summary>
+        internal static string OpenListGeneral {
+            get {
+                return ResourceManager.GetString("OpenListGeneral", resourceCulture);
             }
         }
         
@@ -183,6 +210,16 @@ namespace ZapretControl.Locales {
         internal static string SettingsGameFilter {
             get {
                 return ResourceManager.GetString("SettingsGameFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Format: &lt;port&gt;,&lt;port&gt;-&lt;port&gt;,&lt;...&gt;
+        ///Default: 1024-65535.
+        /// </summary>
+        internal static string SettingsGameFilterNote {
+            get {
+                return ResourceManager.GetString("SettingsGameFilterNote", resourceCulture);
             }
         }
         

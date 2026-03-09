@@ -7,7 +7,7 @@ namespace ZapretControl
 {
     internal static class Config
     {
-        public static ControlSettings Current { get; set; }
+        public static ControlSettings Current { get; private set; }
 
         private static ControlSettings Default => new()
         {

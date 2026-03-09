@@ -126,6 +126,9 @@
   <data name="Close" xml:space="preserve">
     <value>Close ZapretControl</value>
   </data>
+  <data name="Lists" xml:space="preserve">
+    <value>Lists</value>
+  </data>
   <data name="NoBinary" xml:space="preserve">
     <value>winws.exe not found.</value>
   </data>
@@ -137,6 +140,12 @@
   </data>
   <data name="OpenList" xml:space="preserve">
     <value>Open list-general</value>
+  </data>
+  <data name="OpenListExclude" xml:space="preserve">
+    <value>Open list-exclude-user</value>
+  </data>
+  <data name="OpenListGeneral" xml:space="preserve">
+    <value>Open list-general-user</value>
   </data>
   <data name="OpenListsFolder" xml:space="preserve">
     <value>Open lists folder</value>
@@ -157,7 +166,11 @@
     <value>Start Zapret when ZapretControl is started</value>
   </data>
   <data name="SettingsGameFilter" xml:space="preserve">
-    <value>Bypass mode for games (1024-65535)</value>
+    <value>Bypass mode for games</value>
+  </data>
+  <data name="SettingsGameFilterNote" xml:space="preserve">
+    <value>Format: &lt;port&gt;,&lt;port&gt;-&lt;port&gt;,&lt;...&gt;
+Default: 1024-65535</value>
   </data>
   <data name="SettingsMinimized" xml:space="preserve">
     <value>Start minimized</value>

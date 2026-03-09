@@ -33,14 +33,22 @@
             CB_AutostartControl = new System.Windows.Forms.CheckBox();
             CB_Autostart = new System.Windows.Forms.CheckBox();
             CB_StopDriver = new System.Windows.Forms.CheckBox();
-            CB_GameFilter = new System.Windows.Forms.CheckBox();
             tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             B_OK = new System.Windows.Forms.Button();
             B_Cancel = new System.Windows.Forms.Button();
+            CB_UDP = new System.Windows.Forms.CheckBox();
+            CB_TCP = new System.Windows.Forms.CheckBox();
+            GB_GameFilter = new System.Windows.Forms.GroupBox();
+            tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            TB_UDP = new System.Windows.Forms.TextBox();
+            TB_TCP = new System.Windows.Forms.TextBox();
+            L_Note = new System.Windows.Forms.Label();
             flowLayoutPanel3.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
+            GB_GameFilter.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
             // CB_Minimized
@@ -60,12 +68,11 @@
             flowLayoutPanel3.Controls.Add(CB_Minimized);
             flowLayoutPanel3.Controls.Add(CB_Autostart);
             flowLayoutPanel3.Controls.Add(CB_StopDriver);
-            flowLayoutPanel3.Controls.Add(CB_GameFilter);
             flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            flowLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new System.Drawing.Size(284, 125);
+            flowLayoutPanel3.Size = new System.Drawing.Size(278, 100);
             flowLayoutPanel3.TabIndex = 8;
             flowLayoutPanel3.WrapContents = false;
             // 
@@ -98,15 +105,6 @@
             CB_StopDriver.TabIndex = 7;
             CB_StopDriver.Text = "SettingsStop";
             // 
-            // CB_GameFilter
-            // 
-            CB_GameFilter.AutoSize = true;
-            CB_GameFilter.Location = new System.Drawing.Point(3, 103);
-            CB_GameFilter.Name = "CB_GameFilter";
-            CB_GameFilter.Size = new System.Drawing.Size(83, 19);
-            CB_GameFilter.TabIndex = 7;
-            CB_GameFilter.Text = "GameFilter";
-            // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.AutoSize = true;
@@ -116,11 +114,11 @@
             tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             tableLayoutPanel1.Controls.Add(flowLayoutPanel1, 1, 0);
             tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            tableLayoutPanel1.Location = new System.Drawing.Point(0, 128);
+            tableLayoutPanel1.Location = new System.Drawing.Point(3, 225);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new System.Drawing.Size(284, 33);
+            tableLayoutPanel1.Size = new System.Drawing.Size(278, 33);
             tableLayoutPanel1.TabIndex = 9;
             // 
             // flowLayoutPanel1
@@ -130,7 +128,7 @@
             flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             flowLayoutPanel1.Controls.Add(B_OK);
             flowLayoutPanel1.Controls.Add(B_Cancel);
-            flowLayoutPanel1.Location = new System.Drawing.Point(150, 0);
+            flowLayoutPanel1.Location = new System.Drawing.Point(144, 0);
             flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new System.Drawing.Size(134, 33);
@@ -168,18 +166,101 @@
             B_Cancel.UseVisualStyleBackColor = true;
             B_Cancel.Click += B_Cancel_Click;
             // 
+            // CB_UDP
+            // 
+            CB_UDP.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            CB_UDP.AutoSize = true;
+            CB_UDP.Location = new System.Drawing.Point(3, 34);
+            CB_UDP.Name = "CB_UDP";
+            CB_UDP.Size = new System.Drawing.Size(49, 19);
+            CB_UDP.TabIndex = 10;
+            CB_UDP.Text = "UDP";
+            // 
+            // CB_TCP
+            // 
+            CB_TCP.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            CB_TCP.AutoSize = true;
+            CB_TCP.Location = new System.Drawing.Point(5, 5);
+            CB_TCP.Name = "CB_TCP";
+            CB_TCP.Size = new System.Drawing.Size(47, 19);
+            CB_TCP.TabIndex = 11;
+            CB_TCP.Text = "TCP";
+            // 
+            // GB_GameFilter
+            // 
+            GB_GameFilter.AutoSize = true;
+            GB_GameFilter.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            GB_GameFilter.Controls.Add(tableLayoutPanel2);
+            GB_GameFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            GB_GameFilter.Location = new System.Drawing.Point(3, 103);
+            GB_GameFilter.Name = "GB_GameFilter";
+            GB_GameFilter.Size = new System.Drawing.Size(278, 95);
+            GB_GameFilter.TabIndex = 12;
+            GB_GameFilter.TabStop = false;
+            GB_GameFilter.Text = "GameFilter";
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.AutoSize = true;
+            tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel2.ColumnCount = 2;
+            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel2.Controls.Add(TB_UDP, 1, 1);
+            tableLayoutPanel2.Controls.Add(TB_TCP, 1, 0);
+            tableLayoutPanel2.Controls.Add(CB_TCP, 0, 0);
+            tableLayoutPanel2.Controls.Add(CB_UDP, 0, 1);
+            tableLayoutPanel2.Controls.Add(L_Note, 0, 2);
+            tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel2.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 3;
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel2.Size = new System.Drawing.Size(272, 73);
+            tableLayoutPanel2.TabIndex = 0;
+            // 
+            // TB_UDP
+            // 
+            TB_UDP.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            TB_UDP.Location = new System.Drawing.Point(58, 32);
+            TB_UDP.Name = "TB_UDP";
+            TB_UDP.Size = new System.Drawing.Size(211, 23);
+            TB_UDP.TabIndex = 13;
+            // 
+            // TB_TCP
+            // 
+            TB_TCP.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            TB_TCP.Location = new System.Drawing.Point(58, 3);
+            TB_TCP.Name = "TB_TCP";
+            TB_TCP.Size = new System.Drawing.Size(211, 23);
+            TB_TCP.TabIndex = 14;
+            // 
+            // L_Note
+            // 
+            L_Note.AutoSize = true;
+            tableLayoutPanel2.SetColumnSpan(L_Note, 2);
+            L_Note.Location = new System.Drawing.Point(3, 58);
+            L_Note.Name = "L_Note";
+            L_Note.Size = new System.Drawing.Size(132, 15);
+            L_Note.TabIndex = 15;
+            L_Note.Text = "SettingsGameFilterNote";
+            // 
             // FormSettings
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(250, 250, 250);
-            ClientSize = new System.Drawing.Size(284, 161);
+            ClientSize = new System.Drawing.Size(284, 261);
             ControlBox = false;
+            Controls.Add(GB_GameFilter);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(flowLayoutPanel3);
-            MaximumSize = new System.Drawing.Size(300, 250);
-            MinimumSize = new System.Drawing.Size(300, 200);
+            MaximumSize = new System.Drawing.Size(400, 300);
+            MinimumSize = new System.Drawing.Size(300, 300);
             Name = "FormSettings";
+            Padding = new System.Windows.Forms.Padding(3);
             ShowInTaskbar = false;
             StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             Text = "Settings";
@@ -189,6 +270,10 @@
             tableLayoutPanel1.PerformLayout();
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();
+            GB_GameFilter.ResumeLayout(false);
+            GB_GameFilter.PerformLayout();
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -204,6 +289,12 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button B_OK;
         private System.Windows.Forms.Button B_Cancel;
-        private System.Windows.Forms.CheckBox CB_GameFilter;
+        private System.Windows.Forms.CheckBox CB_UDP;
+        private System.Windows.Forms.CheckBox CB_TCP;
+        private System.Windows.Forms.GroupBox GB_GameFilter;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TextBox TB_UDP;
+        private System.Windows.Forms.TextBox TB_TCP;
+        private System.Windows.Forms.Label L_Note;
     }
 }

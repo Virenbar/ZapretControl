@@ -126,6 +126,9 @@
   <data name="Close" xml:space="preserve">
     <value>Закрыть ZapretControl</value>
   </data>
+  <data name="Lists" xml:space="preserve">
+    <value>Списки</value>
+  </data>
   <data name="NoBinary" xml:space="preserve">
     <value>winws.exe не найден.</value>
   </data>
@@ -137,6 +140,12 @@
   </data>
   <data name="OpenList" xml:space="preserve">
     <value>Открыть list-general</value>
+  </data>
+  <data name="OpenListExclude" xml:space="preserve">
+    <value>Открыть list-exclude-user</value>
+  </data>
+  <data name="OpenListGeneral" xml:space="preserve">
+    <value>Открыть list-general-user</value>
   </data>
   <data name="OpenListsFolder" xml:space="preserve">
     <value>Открыть папку lists</value>
@@ -157,7 +166,11 @@
     <value>Запускать Zapret при запуске ZapretControl</value>
   </data>
   <data name="SettingsGameFilter" xml:space="preserve">
-    <value>Режим обхода для игр (1024-65535)</value>
+    <value>Режим обхода для игр</value>
+  </data>
+  <data name="SettingsGameFilterNote" xml:space="preserve">
+    <value>Формат: &lt;порт&gt;,&lt;порт&gt;-&lt;порт&gt;,&lt;...&gt;
+По умолчанию: 1024-65535</value>
   </data>
   <data name="SettingsMinimized" xml:space="preserve">
     <value>Запускать свернутым</value>
