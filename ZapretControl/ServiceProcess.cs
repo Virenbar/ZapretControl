@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace ZapretControl
     internal static class ServiceProcess
     {
         private const string IPSetMenu = "5";
+        private const int OutputTimeout = 10_000;
         private static readonly List<string> Buffer = new();
         private static readonly Regex IPSetRegex = new(@"ipset.*\[(?<mode>\w+)\]", RegexOptions.Compiled | RegexOptions.IgnoreCase);
         private static readonly ControlSettings Settings = Config.Current;
@@ -23,9 +25,9 @@ namespace ZapretControl
             return Task.Run(() =>
             {
                 StartService();
-                Thread.Sleep(1000);
+                var match = WaitForMatch(IPSetRegex);
                 StopService();
-                return MatchInBuffer(IPSetRegex, "mode");
+                return match?.Groups["mode"].Value;
             });
         }
 
@@ -34,26 +36,60 @@ namespace ZapretControl
             return Task.Run(() =>
             {
                 StartService();
-                Thread.Sleep(1000);
+                WaitForMatch(IPSetRegex);
+                Buffer.Clear();
                 Service.StandardInput.WriteLine(IPSetMenu);
-                Thread.Sleep(1000);
+                WaitForBuffer(1);
                 //Service.StandardInput.WriteLine("0");
                 StopService();
             });
         }
 
-        private static string MatchInBuffer(Regex regex, string group)
+        private static Match MatchInBuffer(Regex regex)
         {
-            foreach (var line in Buffer)
+            var buffer = Buffer.ToList();
+            foreach (var line in buffer)
             {
                 var match = regex.Match(line);
                 if (match.Success)
                 {
-                    return match.Groups[group].Value;
+                    return match;
                 }
             }
             return null;
         }
+
+        private static void WaitForBuffer(int count)
+        {
+            var watch = new Stopwatch();
+            watch.Start();
+            while (watch.Elapsed.TotalMilliseconds < OutputTimeout)
+            {
+                Thread.Sleep(250);
+                var buffer = Buffer.ToList();
+                if (buffer.Count >= count)
+                {
+                    return;
+                }
+            }
+        }
+
+        private static Match WaitForMatch(Regex regex)
+        {
+            var watch = new Stopwatch();
+            watch.Start();
+            while (watch.Elapsed.TotalMilliseconds < OutputTimeout)
+            {
+                Thread.Sleep(250);
+                if (MatchInBuffer(regex) is Match match)
+                {
+                    return match;
+                }
+            }
+            return null;
+        }
+
+        #region Service
 
         private static void Service_ErrorDataReceived(object sender, DataReceivedEventArgs e)
         {
@@ -110,5 +146,7 @@ namespace ZapretControl
             Service.WaitForExit();
             Service = null;
         }
+
+        #endregion Service
     }
 }
