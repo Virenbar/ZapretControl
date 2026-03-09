@@ -112,16 +112,19 @@ namespace ZapretControl
             B_Restart.Text = Strings.Restart;
             B_Start.Text = Strings.Start;
             B_Close.Text = Strings.Close;
-
+            //
             MI_Start.Text = Strings.Start;
             MI_Stop.Text = Strings.Stop;
             MI_Show.Text = Strings.Show;
             MI_Close.Text = Strings.Close;
-
-            MI_Service.Text = Strings.Service;
-            MI_OpenList.Text = Strings.OpenList;
-            MI_SwitchIP.Text = Strings.SwitchIPSet;
+            //
+            MI_Lists.Text = Strings.Lists;
             MI_OpenListFolder.Text = Strings.OpenListsFolder;
+            MI_OpenListGeneral.Text = Strings.OpenListGeneral;
+            MI_OpenListExclude.Text = Strings.OpenListExclude;
+            //
+            MI_Service.Text = Strings.Service;
+            MI_SwitchIP.Text = Strings.SwitchIPSet;
         }
 
         private void RefreshPath()
@@ -225,11 +228,19 @@ namespace ZapretControl
             F.ShowDialog(this);
         }
 
-        #region Service
+        #region Lists
 
-        private void MI_OpenList_Click(object sender, EventArgs e)
+        private void MI_OpenListExclude_Click(object sender, EventArgs e)
         {
-            var List = Directory.EnumerateFiles(Constants.StartupPath, "list-general.txt", SearchOption.AllDirectories).FirstOrDefault();
+            var List = Directory.EnumerateFiles(Constants.StartupPath, "list-exclude-user.txt", SearchOption.AllDirectories).FirstOrDefault();
+            if (List is null) return;
+
+            Process.Start(new ProcessStartInfo(List) { UseShellExecute = true });
+        }
+
+        private void MI_OpenListGeneral_Click(object sender, EventArgs e)
+        {
+            var List = Directory.EnumerateFiles(Constants.StartupPath, "list-general-user.txt", SearchOption.AllDirectories).FirstOrDefault();
             if (List is null) return;
 
             Process.Start(new ProcessStartInfo(List) { UseShellExecute = true });
@@ -242,6 +253,10 @@ namespace ZapretControl
 
             Process.Start(new ProcessStartInfo(Lists) { UseShellExecute = true });
         }
+
+        #endregion Lists
+
+        #region Service
 
         private async void MI_SwitchIP_Click(object sender, EventArgs e)
         {

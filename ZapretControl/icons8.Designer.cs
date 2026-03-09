@@ -113,6 +113,16 @@ namespace ZapretControl {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap OpenedFolder16 {
+            get {
+                object obj = ResourceManager.GetObject("OpenedFolder16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Replace16 {
             get {
                 object obj = ResourceManager.GetObject("Replace16", resourceCulture);
