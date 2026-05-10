@@ -22,6 +22,12 @@
 git submodule update --recursive --remote
 ```
 
+```sh
+# Локальная публикация (Публикация в папку сломана в VS)
+dotnet publish -c Release -p:PublishProfile=net6 -f net6.0-windows /property:Version=1.*.*
+dotnet publish -c Release -p:PublishProfile=net8 -f net8.0-windows /property:Version=1.*.*
+```
+
 ## Ссылки
 
 * **[zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube)** by @Flowseal

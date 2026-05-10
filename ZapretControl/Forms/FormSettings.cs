@@ -51,7 +51,7 @@ namespace ZapretControl.Forms
             // private readonly Regex R = new("^(\\d+(?:-\\d+)?(?:,\\d+(?:-\\d+)?)*)$", RegexOptions.Compiled);
             if (!string.IsNullOrWhiteSpace(TB_TCP.Text)) { mode.TCPRange = TB_TCP.Text; }
             mode.TCP = CB_TCP.Checked;
-            if (!string.IsNullOrWhiteSpace(CB_UDP.Text)) { mode.UDPRange = CB_UDP.Text; }
+            if (!string.IsNullOrWhiteSpace(CB_UDP.Text)) { mode.UDPRange = TB_UDP.Text; }
             mode.UDP = CB_UDP.Checked;
             Settings.GameFilterMode = mode;
 
