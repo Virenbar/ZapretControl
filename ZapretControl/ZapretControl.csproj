@@ -13,6 +13,7 @@
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/Virenbar/ZapretControl</RepositoryUrl>
 		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<CheckEolTargetFramework>false</CheckEolTargetFramework>
 	</PropertyGroup>
 
 	<PropertyGroup>
