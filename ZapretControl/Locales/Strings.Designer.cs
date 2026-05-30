@@ -160,7 +160,7 @@ namespace ZapretControl.Locales {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Restars Zapret.
+        ///   Ищет локализованную строку, похожую на Restart Zapret.
         /// </summary>
         internal static string Restart {
             get {
@@ -205,7 +205,7 @@ namespace ZapretControl.Locales {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Bypass mode for games (1024-65535).
+        ///   Ищет локализованную строку, похожую на Bypass mode for games.
         /// </summary>
         internal static string SettingsGameFilter {
             get {

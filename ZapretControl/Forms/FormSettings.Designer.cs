@@ -168,7 +168,7 @@
             // 
             // CB_UDP
             // 
-            CB_UDP.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            CB_UDP.Anchor = System.Windows.Forms.AnchorStyles.Left;
             CB_UDP.AutoSize = true;
             CB_UDP.Location = new System.Drawing.Point(3, 34);
             CB_UDP.Name = "CB_UDP";
@@ -178,9 +178,9 @@
             // 
             // CB_TCP
             // 
-            CB_TCP.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            CB_TCP.Anchor = System.Windows.Forms.AnchorStyles.Left;
             CB_TCP.AutoSize = true;
-            CB_TCP.Location = new System.Drawing.Point(5, 5);
+            CB_TCP.Location = new System.Drawing.Point(3, 5);
             CB_TCP.Name = "CB_TCP";
             CB_TCP.Size = new System.Drawing.Size(47, 19);
             CB_TCP.TabIndex = 11;
