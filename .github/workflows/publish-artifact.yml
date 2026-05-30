@@ -17,7 +17,7 @@ jobs:
         run: echo "Version builded ${{ needs.build.outputs.version }}"
 
       - name: Download artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
 
       - name: List files
         run: ls -R
@@ -28,7 +28,7 @@ jobs:
           zip -r "ZapretControl-8.0.zip" "ZapretControl(net8.0-windows)"
 
       - name: Create Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: |
             ZapretControl-6.0.zip

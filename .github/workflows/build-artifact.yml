@@ -32,13 +32,13 @@ jobs:
       version: ${{steps.version.outputs.version}}
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         fetch-depth: 0
         submodules: recursive
 
     - name: Install .NET
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: 6.x
       
@@ -47,7 +47,7 @@ jobs:
       run: .\.github\scripts\version.ps1
 
     - name: Restore cache
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: ~\.nuget\packages
         key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
@@ -66,7 +66,7 @@ jobs:
       run: ls ZapretControl\publish -R -file -Name
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: ZapretControl(${{ matrix.framework }})
         path: |
